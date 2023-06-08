@@ -19,5 +19,8 @@ export default {
       pokeAPI.get(`/pokemon/${id}`).then(response => response.data)
     )
     return Promise.all(pokemonRequests)
+  },
+  getSinglePokemon(pokemonId) {
+    return pokeAPI.get(`/pokemon/${pokemonId}`);
   }
 }

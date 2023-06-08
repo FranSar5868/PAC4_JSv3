@@ -1,17 +1,20 @@
 <script setup>
 import {ref, onMounted} from 'vue' 
-import myAPI from '../services/services.js'
-
-const props = defineProps(['photoId'])
+// import myAPI from '../services/pokemonService.js'
+import { defineProps } from 'vue';
+import pokeAPI from '../services/pokemonService.js'
+const props = defineProps(['pokemonId'])
 
 const information = ref({});
 
 onMounted(() => {
-  myAPI.getSinglePhoto( props.photoId ).then( (response) => {
+  pokeAPI.getSinglePokemon( props.pokemonId ).then( (response) => {
     console.log(response.data)
     information.value = response.data; 
   })
 })
+
+
 
 </script>
 

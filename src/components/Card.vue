@@ -13,7 +13,7 @@ const props = defineProps(['info'])
     <img :src="props.info.sprites.front_default" alt="props.info.name">
     <h3 class="data">Atac: {{ props.info.stats[1].base_stat }}</h3>
     <h3 class="data">Defensa: {{ props.info.stats[1].base_stat }}</h3>
-    <button @click="$router.push({ name: 'photo', params: {photoId: props.info.id } })">Detalls</button>
+    <button @click="$router.push({ name: 'pokemon', params: {pokemonId: props.info.id } })">Detalls</button>
   </article>
 </template>
 
