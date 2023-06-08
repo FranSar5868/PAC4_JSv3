@@ -63,6 +63,12 @@ const router = createRouter({
       name: 'photo',
       props: true,
       component: () => import('../views/PhotoView.vue')
+    },
+    {
+      path: '/pokemon/:pokemonId',
+      name: 'pokemon',
+      props: true,
+      component: () => import('../views/PokemonView.vue')
     }
   ]
 })
