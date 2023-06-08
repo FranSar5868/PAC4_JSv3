@@ -52,7 +52,7 @@ li:hover {
 .cards {
   display: flex;
   gap: 2rem;
-  max-width: 50vw;
+  /* max-width: 50vw; */
   flex-wrap: wrap;
 }
 </style>
