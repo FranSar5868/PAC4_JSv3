@@ -24,6 +24,7 @@ const changeTheme = (e) => {
           <RouterLink to="/for">For</RouterLink>
           <RouterLink to="/component">Component</RouterLink>
           <RouterLink to="/api">API</RouterLink>
+          <RouterLink to="/pokedex">Pokedex</RouterLink>
           <RouterLink to="/composition">Composition</RouterLink>
           <RouterLink to="/options">Options</RouterLink>
         </nav>
