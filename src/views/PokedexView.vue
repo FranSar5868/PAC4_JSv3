@@ -25,7 +25,7 @@ const filteredCards = computed(() => {
     <input v-model="search" type="text" placeholder="type to search...">
     <br>
     <section class="cards">
-        <Card v-for="card in filteredCards" :key="card.id" :info="card"
+        <Card v-for="card in filteredCards" :key="card.id" :info="card"/>
     </section>
   </div>
 </template>
