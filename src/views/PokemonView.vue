@@ -26,6 +26,19 @@ onMounted(() => {
 
     <img v-if="information.sprites && information.sprites.back_default" :src="information.sprites.back_default" :alt="information.name" />
 
+    <!-- <div class="card-stats">
+        <div v-for="stat in information.stats" :key="stat.base_stat" >
+          {{ stat.stat.name }}:{{ stat.base_stat }}
+        </div>
+      </div> -->
+
+      <div class="card-detail-stats">
+        <div v-for="stat in information.stats" :key="stat.stat.name" class="card-stat">
+          <span class="card-detail-stat-label">{{ stat.stat.name }}:</span>
+          <span class="card-detail-stat-value">{{ stat.base_stat }}</span>
+        </div>
+      </div>
+
     <div class="card-detail-types">
         <div v-for="type in information.types" :key="type.type.name" class="card-detail-type">
           {{ type.type.name }}
@@ -33,7 +46,7 @@ onMounted(() => {
       </div>
 
 
-      
+
       </div>
     </div>
 </template>
@@ -121,6 +134,28 @@ onMounted(() => {
   border-radius: 4px;
   margin-right: 10px;
   font-size: 14px;
+  font-weight: bold;
+}
+
+.card-detail-stats {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.card-detail-stat {
+  margin-bottom: 10px;
+}
+
+.card-detail-stat-label {
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 10px;
+  color: #0c4fdf;
+}
+
+.card-detail-stat-value {
+  font-size: 18px;
   font-weight: bold;
 }
 
