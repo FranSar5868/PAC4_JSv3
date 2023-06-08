@@ -38,6 +38,11 @@ const router = createRouter({
       component: () => import('../views/ApiView.vue')
     },
     {
+      path: '/pokedex',
+      name: 'pokedex',
+      component: () => import('../views/PokedexView.vue')
+    },
+    {
       path: '/composition',
       name: 'composition',
       component: () => import('../views/DemoComposition.vue')
