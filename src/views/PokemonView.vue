@@ -22,9 +22,9 @@ onMounted(() => {
 
     <!-- <p>ID: {{ information.id }}</p> -->
     
-    <img :src="information.sprites?.front_default" alt="information.name">
+    <img class="card-detail-image" :src="information.sprites?.front_default" alt="information.name">
 
-    <img v-if="information.sprites && information.sprites.back_default" :src="information.sprites.back_default" :alt="information.name" />
+    <img v-if="information.sprites && information.sprites.back_default" :src="information.sprites.back_default" class="card-detail-image-back" :alt="information.name" />
 
     <!-- <div class="card-stats">
         <div v-for="stat in information.stats" :key="stat.base_stat" >
