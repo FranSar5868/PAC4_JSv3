@@ -26,10 +26,13 @@ const increment = () => {
     <h3 class="data">Atac: {{ props.info.stats[1].base_stat }}</h3>
     <h3 class="data">Defensa: {{ props.info.stats[2].base_stat }}</h3>
     </div>
+    <div v-else>
+      <img src="../assets/pokeball.png" alt="Pokeball Image">
+    </div>
 
     <!-- <button @click="$router.push({ name: 'single', params: {turtleId: props.info.id } })">View more...</button> -->
     <!-- <button :class="{ max : count>=10 }" @click="increment">Counter {{ count }}</button> -->
-    <button :class="{ max : count === 1 }" @click="increment">Click to combat! {{ count }}</button>
+    <button :class="{ max : count === 1 }" @click="increment">Click to combat!</button>
 
   </article>
 </template>
@@ -52,6 +55,11 @@ const increment = () => {
 }
 .card button {
   margin-top: auto;
+}
+
+.card img {
+  max-width: 150px;
+  height: auto;
 }
 
 .name {

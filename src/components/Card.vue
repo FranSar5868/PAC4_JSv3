@@ -29,6 +29,10 @@ const props = defineProps(['info'])
   width: fit-content;
   min-width: 200px;
   max-width: 250px;
+  background-color: var(--bg-card);
+  color: var(--text-card);
+  justify-content: center; /* Center content vertically */
+  align-items: center;
 }
 .name {
   text-align: center;
