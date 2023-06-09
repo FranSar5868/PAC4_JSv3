@@ -21,7 +21,7 @@ const increment = () => {
         <!-- <p>{{ props.info.weapon }}</p> -->
 
     <div v-if="count === 1">
-    <h2>{{ props.info.name }}</h2>
+    <h2 class="name">{{ props.info.name }}</h2>
     <img :src="props.info.sprites.front_default" alt="props.info.name">
     <h3 class="data">Atac: {{ props.info.stats[1].base_stat }}</h3>
     <h3 class="data">Defensa: {{ props.info.stats[2].base_stat }}</h3>
@@ -47,10 +47,24 @@ const increment = () => {
   min-width: 200px;
   background-color: var(--bg-card);
   color: var(--text-card);
+  justify-content: center; /* Center content vertically */
+  align-items: center;
 }
 .card button {
   margin-top: auto;
 }
+
+.name {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.data {
+  text-align: center;
+}
+
+
 .orange {
   box-shadow: 0 0 10px 5px orange;
 }
