@@ -44,17 +44,29 @@ const fetchNewPokemons = async () => {
   </div>
 </template>
 
-<style>
-/* .new {
-  display: grid;
-} */
+<style scoped>
+
 .cards {
   display: flex;
   gap: 2rem;
   /* max-width: 50vw; */
   flex-wrap: wrap;
 }
+
 .fetch-button {
+  position: fixed;
+  bottom: 600px;
+  right: 20px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* .fetch-button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   border: none;
@@ -63,7 +75,7 @@ const fetchNewPokemons = async () => {
   font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
-}
+} */
 
 .fetch-button:hover {
   background-color: #ffc200;
