@@ -3,6 +3,8 @@
 import {ref, onMounted} from 'vue'
 
 import BattleCard from '../components/BattleCard.vue'
+import pokemonService from '../services/pokemonService.js'
+
 
 const tmnt = [
   {id:1, name: 'Leonardo', weapon: 'Katana', color: 'blue'},
@@ -23,6 +25,11 @@ const tmnt = [
     localStorage.setItem('pokemonCards', JSON.stringify(cards.value))
   }
 })
+
+const fetchNewPokemons = async () => {
+  cards.value = await pokemonService.getRandomPokemons(10)
+  localStorage.setItem('pokemonCards', JSON.stringify(cards.value))
+}
 
 const totalCount = ref(0);
 
@@ -49,8 +56,8 @@ const updateCounter = (name, attack, defense) => {
       } else if (totalCount.value === 2) {
         defenderName.value = name
         defenderDefense.value = defense
-      // } else if (totalCount.value === 3) {
-      //   router.push({ name: 'batle' })
+      } else if (totalCount.value === 3) {
+        window.location.reload()
       }
 
 }
@@ -62,7 +69,10 @@ const updateCounter = (name, attack, defense) => {
 
 <template>
   <div class="new">
-    <h1>V-for component example</h1>
+    <h1>Battle of Pokemons</h1>
+    <h2>Selecciona dues cartes per iniciar el combat</h2>
+    <h3>Selecciona una tercera per començar de nou</h3>
+
     <p>Total counter: {{ totalCount }}</p>
     <p v-if="turtleName !== '' ">{{ turtleName }} uses {{ turtleWeapon }}</p>
     <p v-if="defenderName !== '' && attackerAttack > defenderDefense"> {{ attackerName }} wins {{ defenderName }} because {{ attackerAttack }} attack is bigger than {{ defenderDefense }} defense</p>
@@ -70,24 +80,47 @@ const updateCounter = (name, attack, defense) => {
     <p v-if="defenderName !== '' && attackerAttack == defenderDefense"> {{ defenderName  }} tie {{ attackerName }} because {{ attackerAttack }} equals {{ defenderDefense }} defense </p>
 
     <section class="cards">
-      <!-- <BattleCard v-for="turtle in tmnt" :key="turtle.id" :info="turtle" @response="updateCounter" /> -->
       <BattleCard v-for="card in cards" :key="card.id" :info="card" @response="updateCounter"/>
     </section>
+    <button class="fetch-button" @click="fetchNewPokemons">Vols carregar Pokemons nous?</button>
+
   </div>
 </template>
 
-<style>
-.new {
-  display: grid;
-}
-li {
-  cursor: pointer;
-}
-li:hover {
-  color: hsla(160, 100%, 37%, 1);
-}
+<style scoped>
+
 .cards {
   display: flex;
   gap: 2rem;
+  /* max-width: 50vw; */
+  flex-wrap: wrap;
+}
+/* .fetch-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #ffcb05;
+  color: #333;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+} */
+
+.fetch-button {
+  position: fixed;
+  bottom: 600px;
+  right: 20px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.fetch-button:hover {
+  background-color: #ffc200;
 }
 </style>
