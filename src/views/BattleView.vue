@@ -67,6 +67,7 @@ const updateCounter = (name, attack, defense) => {
     <p v-if="turtleName !== '' ">{{ turtleName }} uses {{ turtleWeapon }}</p>
     <p v-if="defenderName !== '' && attackerAttack > defenderDefense"> {{ attackerName }} wins {{ defenderName }} because {{ attackerAttack }} attack is bigger than {{ defenderDefense }} defense</p>
     <p v-if="defenderName !== '' && attackerAttack < defenderDefense"> {{ defenderName  }} wins {{ attackerName }} because {{ attackerAttack }} attack is smaller than  {{ defenderDefense }} defense </p>
+    <p v-if="defenderName !== '' && attackerAttack == defenderDefense"> {{ defenderName  }} tie {{ attackerName }} because {{ attackerAttack }} equals {{ defenderDefense }} defense </p>
 
     <section class="cards">
       <!-- <BattleCard v-for="turtle in tmnt" :key="turtle.id" :info="turtle" @response="updateCounter" /> -->
