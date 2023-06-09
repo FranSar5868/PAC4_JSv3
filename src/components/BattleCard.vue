@@ -8,10 +8,6 @@ const emit = defineEmits(['response'])
 
 const count = ref(0)
 
-// const increment = () => {
-//   count.value++ ;
-//   emit('response', props.info.name, props.info.weapon);
-// }
 
 const increment = () => {
   count.value++ ;
@@ -21,15 +17,19 @@ const increment = () => {
 
 <template>
   <article class="card" :class="props.info.color">
-    I'm a pokemon!
+    <!-- I'm a pokemon! -->
+        <!-- <p>{{ props.info.weapon }}</p> -->
+
+    <div v-if="count === 1">
     <h2>{{ props.info.name }}</h2>
-    <p>{{ props.info.weapon }}</p>
     <img :src="props.info.sprites.front_default" alt="props.info.name">
     <h3 class="data">Atac: {{ props.info.stats[1].base_stat }}</h3>
     <h3 class="data">Defensa: {{ props.info.stats[2].base_stat }}</h3>
+    </div>
+
     <!-- <button @click="$router.push({ name: 'single', params: {turtleId: props.info.id } })">View more...</button> -->
-    <button :class="{ max : count>=10 }" @click="increment">Counter {{ count }}</button>
-    <button :class="{ max : count === 1 }" @click="increment">Combat {{ count }}</button>
+    <!-- <button :class="{ max : count>=10 }" @click="increment">Counter {{ count }}</button> -->
+    <button :class="{ max : count === 1 }" @click="increment">Click to combat! {{ count }}</button>
 
   </article>
 </template>
