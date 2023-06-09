@@ -18,6 +18,11 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
+      path: '/battle',
+      name: 'battle',
+      component: () => import('../views/BattleView.vue')
+    },
+    {
       path: '/new',
       name: 'new',
       component: () => import('../views/NewView.vue')
@@ -69,7 +74,7 @@ const router = createRouter({
       name: 'pokemon',
       props: true,
       component: () => import('../views/PokemonView.vue')
-    }
+    },
   ]
 })
 
