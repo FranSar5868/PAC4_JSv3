@@ -34,8 +34,8 @@ const fetchNewPokemons = async () => {
 
 <template>
   <div class="new">
-    <h1>Pokedex</h1>
-    <input v-model="search" type="text" placeholder="type to search...">
+    <h1 class="title">Pokedex</h1>
+    <input v-model="search" type="text" placeholder="Tecleja per filtrar pel nom..." class="search-input">
     <br>
     <section class="cards">
         <Card v-for="card in filteredCards" :key="card.id" :info="card"/>
@@ -45,6 +45,21 @@ const fetchNewPokemons = async () => {
 </template>
 
 <style scoped>
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 300px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the input horizontally */
+  display: block; /* Display as block element to take up only necessary width */
+  padding: 8px; /* Add padding for better visual appearance */
+  font-size: 16px; /* Adjust font size as needed */
+}
 
 .cards {
   display: flex;
