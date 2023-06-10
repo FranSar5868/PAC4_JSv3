@@ -40,7 +40,7 @@
   margin-top: 0.5rem;
   text-transform: uppercase;
 }
-.image{
+.image {
   width: 100px;
 }
 </style>
