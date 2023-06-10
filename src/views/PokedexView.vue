@@ -56,7 +56,7 @@ const fetchNewPokemons = async () => {
 .fetch-button {
   position: fixed;
   bottom: 600px;
-  right: 20px;
+  right: 200px;
   padding: 10px;
   background-color: #333;
   color: #fff;
@@ -66,16 +66,6 @@ const fetchNewPokemons = async () => {
   z-index: 9999;
 }
 
-/* .fetch-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #ffcb05;
-  color: #333;
-  font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-} */
 
 .fetch-button:hover {
   background-color: #ffc200;

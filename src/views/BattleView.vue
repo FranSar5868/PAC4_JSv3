@@ -69,16 +69,7 @@ const getResultStyle = () => {
     <h2 class="subtitle">Selecciona dues cartes per iniciar un combat</h2>
     <h3 class="subtitle">Selecciona una tercera per començar un nou combat</h3>
 
-    <!-- <p>Total counter: {{ totalCount }}</p> -->
-
-
-    <!-- <p v-if="turtleName !== '' ">{{ turtleName }} uses {{ turtleWeapon }}</p>
-    <p v-if="defenderName !== '' && attackerAttack > defenderDefense"> {{ attackerName }} wins {{ defenderName }} because {{ attackerAttack }} attack is bigger than {{ defenderDefense }} defense</p>
-    <p v-if="defenderName !== '' && attackerAttack < defenderDefense"> {{ defenderName  }} wins {{ attackerName }} because {{ attackerAttack }} attack is smaller than  {{ defenderDefense }} defense </p>
-    <p v-if="defenderName !== '' && attackerAttack == defenderDefense"> {{ defenderName  }} tie {{ attackerName }} because {{ attackerAttack }} equals {{ defenderDefense }} defense </p>
- -->
-
-    <div class="result-message" :class="getResultStyle()">
+    <div class="result-message" :class="getResultStyle()" v-if="defenderName !== ''">
       <span v-if="defenderName !== ''">
         {{ attackerName }} 
         <span v-if="attackerAttack > defenderDefense">wins </span>
@@ -128,36 +119,10 @@ const getResultStyle = () => {
   /* max-width: 50vw; */
   flex-wrap: wrap;
 }
-/* .fetch-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #ffcb05;
-  color: #333;
-  font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  justify-content: center;
-} */
-
-.result-win {
-  color: green;
-  font-weight: bold;
-}
-
-.result-lose {
-  color: red;
-  font-weight: bold;
-}
-
-.result-tie {
-  color: blue;
-  font-weight: bold;
-}
 
 .result-message {
   position: fixed;
-  top: 12%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
@@ -174,7 +139,7 @@ const getResultStyle = () => {
 .fetch-button {
   position: fixed;
   bottom: 600px;
-  right: 20px;
+  right: 200px;
   padding: 10px;
   background-color: #333;
   color: #fff;
