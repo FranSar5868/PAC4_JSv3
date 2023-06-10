@@ -19,15 +19,8 @@ const changeTheme = (e) => {
 
         <nav>
           <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-          <RouterLink to="/new">New</RouterLink>
-          <RouterLink to="/for">For</RouterLink>
-          <RouterLink to="/component">Component</RouterLink>
           <RouterLink to="/battle">Battle</RouterLink>
-          <RouterLink to="/api">API</RouterLink>
           <RouterLink to="/pokedex">Pokedex</RouterLink>
-          <RouterLink to="/composition">Composition</RouterLink>
-          <RouterLink to="/options">Options</RouterLink>
         </nav>
       </div>
 
@@ -86,6 +79,9 @@ const changeTheme = (e) => {
 
 .settings {
   display: flex;
+  justify-content: flex-end; /* Align to the right */
+  align-items: center; /* Align vertically */
+  margin-top: 1rem; /* Add margin-top for spacing */
 }
 
 header {
@@ -93,34 +89,19 @@ header {
   max-height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
 }
 
 @media (min-width: 1024px) {
@@ -131,9 +112,6 @@ nav a:first-of-type {
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
 
   header .wrapper {
     display: flex;
